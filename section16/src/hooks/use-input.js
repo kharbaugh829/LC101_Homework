@@ -6,7 +6,7 @@ const useInput = (validateValue) => {
 
     const valueIsValid = validateValue(enteredValue);
     const hasError = !valueIsValid && isTouched;
-    const valueChangedHandler = (event) => {
+    const valueChangeHandler = (event) => {
         setEnteredValue(event.target.value);
       };
       const inputBlurHandler = (event) => {
@@ -17,7 +17,7 @@ const useInput = (validateValue) => {
         setIsTouched(false);
         }
     return{
-        value: enteredValue, isValid:valueIsValid, hasError, valueChangedHandler, inputBlurHandler, reset
+        value: enteredValue, isValid:valueIsValid, hasError, valueChangeHandler, inputBlurHandler, reset
     }
 };
 export default useInput;
